@@ -1,7 +1,7 @@
 Route22Mons:
 	db 25 ; grass encounter rate
+IF DEF(_RED) || DEF(_GREEN)
 	db  3, RATTATA
-IF DEF(_RED)
 	db  3, NIDORAN_M
 	db  4, RATTATA
 	db  4, NIDORAN_M
@@ -13,6 +13,7 @@ IF DEF(_RED)
 	db  4, NIDORAN_F
 ENDC
 IF DEF(_BLUE)
+	db  3, RATTATA
 	db  3, NIDORAN_F
 	db  4, RATTATA
 	db  4, NIDORAN_F

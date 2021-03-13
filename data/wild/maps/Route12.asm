@@ -1,6 +1,6 @@
 Route12Mons:
 	db 15 ; grass encounter rate
-IF DEF(_RED)
+IF DEF(_RED) || DEF(_GREEN)
 	db 24, ODDISH
 	db 25, PIDGEY
 	db 23, PIDGEY
