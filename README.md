@@ -1,23 +1,25 @@
-# Pokémon Red and Blue [![Build Status][travis-badge]][travis]
+# Pokémon Red, Green, and Blue
 
-This is a disassembly of Pokémon Red and Blue.
+This is based on Pret's [disassembly][pokered] of the US releases of Pokémon Red and Blue, with an added Green to stand in for JP Blue
 
 It builds the following ROMs:
 
-- Pokemon Red (UE) [S][!].gb `sha1: ea9bcae617fdf159b045185467ae58b2e4a48b9a`
-- Pokemon Blue (UE) [S][!].gb `sha1: d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`
-- BLUEMONS.GB (debug build) `sha1: 5b1456177671b79b263c614ea0e7cc9ac542e9c4`
+- Pokemon Red (TPP).gb `sha1: TBD`
+- Pokemon Blue (TPP).gb `sha1: TBD`
+- Pokemon Green (TPP).gb `sha1: TBD`
+- BLUEMONS.GB (debug build) `sha1: TBD`
+
+In addition to adding Pokémon Green, this build also fixes the following glitches:
+
+- TBD
+
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 
-## See also
+## Pret disassembly projects:
 
-- **Discord:** [pret][discord]
-- **IRC:** [freenode#pret][irc]
-
-Other disassembly projects:
-
+- [**Pokémon Red**][pokered]
 - [**Pokémon Yellow**][pokeyellow]
 - [**Pokémon Gold/Silver**][pokegold]
 - [**Pokémon Crystal**][pokecrystal]
@@ -27,6 +29,7 @@ Other disassembly projects:
 - [**Pokémon FireRed**][pokefirered]
 - [**Pokémon Emerald**][pokeemerald]
 
+[pokered]: https://github.com/pret/pokered
 [pokeyellow]: https://github.com/pret/pokeyellow
 [pokegold]: https://github.com/pret/pokegold
 [pokecrystal]: https://github.com/pret/pokecrystal
@@ -37,5 +40,3 @@ Other disassembly projects:
 [pokeemerald]: https://github.com/pret/pokeemerald
 [discord]: https://discord.gg/d5dubZ3
 [irc]: https://kiwiirc.com/client/irc.freenode.net/?#pret
-[travis]: https://travis-ci.org/pret/pokered
-[travis-badge]: https://travis-ci.org/pret/pokered.svg?branch=master
