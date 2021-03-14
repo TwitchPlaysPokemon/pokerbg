@@ -14,6 +14,10 @@ SafariZoneGate_ScriptPointers:
 	dw .SafariZoneEntranceScript6
 
 .SafariZoneEntranceScript0
+	; Catch players trying to leave Safari Zone after reloading a save
+	CheckEvent EVENT_IN_SAFARI_ZONE
+	jr nz, .SafariZoneEntranceScript3
+
 	ld hl, .CoordsData_75221
 	call ArePlayerCoordsInArray
 	ret nc
@@ -219,6 +223,8 @@ SafariZoneGate_TextPointers:
 	call SafariZoneEntranceAutoWalk
 	ld a, 4
 	ld [wSafariZoneGateCurScript], a
+	; Clear Safari Zone events in case players try to escape
+	ResetEvents EVENT_SAFARI_GAME_OVER, EVENT_IN_SAFARI_ZONE
 .done
 	jp TextScriptEnd
 
