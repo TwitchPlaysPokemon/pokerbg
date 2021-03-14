@@ -201,9 +201,9 @@ SafariZoneGate_TextPointers:
 	ld a, 30
 .PoorMansDiscount
 	ld [wNumSafariBalls], a
-	ld a, HIGH(502)
+	ld a, HIGH(SAFARI_ZONE_STEPS + 2)
 	ld [wSafariSteps], a
-	ld a, LOW(502)
+	ld a, LOW(SAFARI_ZONE_STEPS + 2)
 	ld [wSafariSteps + 1], a
 	ld a, D_UP
 	ld c, 3

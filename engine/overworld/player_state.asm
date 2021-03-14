@@ -232,8 +232,12 @@ PrintSafariZoneSteps::
 	lb bc, 2, 3
 	call PrintNumber
 	hlcoord 4, 1
-	ld de, SafariSteps
+	ld de, SafariStepsDelimiter
 	call PlaceString
+	hlcoord 5, 1
+	ld de, SafariTotalSteps
+	lb bc, 2, 3
+	call PrintNumber
 	hlcoord 1, 3
 	ld de, SafariBallText
 	call PlaceString
@@ -249,8 +253,11 @@ PrintSafariZoneSteps::
 	lb bc, 1, 2
 	jp PrintNumber
 
-SafariSteps:
-	db "/500@"
+SafariStepsDelimiter:
+	db "/@"
+
+SafariTotalSteps:
+	db HIGH(SAFARI_ZONE_STEPS), LOW(SAFARI_ZONE_STEPS)
 
 SafariBallText:
 	db "BALL×× @"

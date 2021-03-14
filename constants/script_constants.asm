@@ -1,3 +1,6 @@
+; Set the initial number of steps you get in the Safari Zone
+SAFARI_ZONE_STEPS EQU 750
+
 ; EmotionBubblesPointerTable indexes (see engine/overworld/emotion_bubbles.asm)
 	const_def
 	const EXCLAMATION_BUBBLE ; 0
