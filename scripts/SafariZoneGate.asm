@@ -424,3 +424,4 @@ SafariZoneEntranceConvertBCDtoNumber:
 	ld a, l
 	pop hl
 	ret
+	

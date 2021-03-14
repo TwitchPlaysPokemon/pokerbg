@@ -145,3 +145,4 @@ _SafariZoneLowCostText8::
 	text "Read my lips, NO!"
 	line "Get it?"
 	done
+	
