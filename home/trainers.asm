@@ -229,7 +229,7 @@ ResetButtonPressedAndMapScript::
 	ld [wCurMapScript], a        ; reset battle status
 	ld hl, wd730
 	res 0, [hl]                  ; Clear NPC movement flag to avoid potential softlocks
-	res 3, [hl]                  ; Clear Trainer encounter reset flag
+	set 3, [hl]                  ; Set Trainer encounter reset flag to avoid Mew Glitch
 	ld hl, wFlags_0xcd60
 	res 0, [hl]                  ; player is no longer engaged by any trainer
 	ret
