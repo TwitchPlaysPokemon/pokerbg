@@ -9,10 +9,13 @@ It builds the following ROMs:
 - Pokemon Green (TPP).gb `sha1: TBD`
 - BLUEMONS.GB (debug build) `sha1: TBD`
 
-In addition to adding Pokémon Green, this build also fixes the following glitches:
+In addition to adding Pokémon Green, this build also makes the following changes:
 
-- TBD
-
+- Poké DOLLS can no longer be used to defeat Ghost Marowak.
+- East shore tiles will no longer generate encounters. (No [Old Man Glitch](https://bulbapedia.bulbagarden.net/wiki/Old_man_glitch))
+- Forest tall-grass-with-flowers tiles will now correctly generate encounters.
+- Soft Reset button combination is removed.
+- The Safari Zone will now let you in if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
