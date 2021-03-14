@@ -18,6 +18,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - The Safari Zone will now let you in if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
 - The Safari Zone will no longer let you leave without quitting the Safari Game. This prevents several glitches, the most major being [Glitch City](https://bulbapedia.bulbagarden.net/wiki/Glitch_City)
 - The Safari Zone's initial step count is boosted from 500 to 750, allowing for more missteps while trying to find HM03 and the GOLD TEETH.
+- Cycling Road's gate guards will no longer let you sneak by without a BICYCLE.
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 

@@ -41,6 +41,8 @@ Route16GateScript0:
 .asm_4970e
 	ld a, $2
 	ld [wRoute16Gate1FCurScript], a
+	ld a, $f0
+	ld [wJoyIgnore], a
 	ret
 
 CoordsData_49714:

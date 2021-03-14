@@ -41,6 +41,8 @@ Route18GateScript0:
 .asm_498c6
 	ld a, $2
 	ld [wRoute18Gate1FCurScript], a
+	ld a, $f0
+	ld [wJoyIgnore], a
 	ret
 
 CoordsData_498cc:
