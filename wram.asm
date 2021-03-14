@@ -2952,6 +2952,9 @@ wd72e::
 
 wd730::
 ; bit 0: NPC sprite being moved by script
+; bits 1-2: Get set/cleared by the overworld button checking and play clock routines
+; bit 3: Reset trainer encounter (avoid Trainer Fly glitch)
+; bit 4: Set and cleared after a trainer battle
 ; bit 5: ignore joypad input
 ; bit 6: print text with no delay between each letter
 ; bit 7: set if joypad states are being simulated in the overworld or an NPC's movement is being scripted
