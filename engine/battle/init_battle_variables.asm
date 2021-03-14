@@ -3,7 +3,6 @@ InitBattleVariables:
 	ld [wSavedTileAnimations], a
 	xor a
 	ld [wActionResultOrTookBattleTurn], a
-	ld [wBattleResult], a
 	ld hl, wPartyAndBillsPCSavedMenuItem
 	ld [hli], a
 	ld [hli], a
@@ -35,4 +34,8 @@ InitBattleVariables:
 	ld a, BATTLE_TYPE_SAFARI
 	ld [wBattleType], a
 .notSafariBattle
+	; init wBattleResult to 2 (draw) instead of 0 (win)
+	; this prevents PokeDolls from bypassing ghosts
+	ld a, 2
+	ld [wBattleResult], a
 	jpfar PlayBattleMusic
