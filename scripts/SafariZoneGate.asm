@@ -315,7 +315,7 @@ SafariZoneEntranceCalculateLowCostAdmission:
 	xor a
 	ldh [hDivideBCDDivisor], a
 	ldh [hDivideBCDDivisor + 1], a
-	ld a, 23
+	ld a, $17
 	ldh [hDivideBCDDivisor + 2], a
 	predef DivideBCDPredef3
 	ldh a, [hDivideBCDQuotient + 2]
@@ -424,4 +424,3 @@ SafariZoneEntranceConvertBCDtoNumber:
 	ld a, l
 	pop hl
 	ret
-	
