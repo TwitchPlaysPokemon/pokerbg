@@ -23,6 +23,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - Move swapping is no longer possible whle [transformed](https://glitchcity.wiki/Swapping_Transform_moves_glitch). (Same behavior as Pokémon Yellow)
 - The Bike Shop salesman no longer leaves [Instant Text Speed](https://glitchcity.wiki/Bike_Shop_instant_text_glitch) turned on. (Same behavior as Pokémon Yellow)
 - The NPC that takes you to Pewter Gym can no longer be bypassed. (Same behavior as Pokémon Yellow)
+- Can no longer [get stuck in the wall of Oak's Lab](https://glitchcity.wiki/Get_stuck_in_a_wall) if a Pallet Town NPC gets in your way.
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 

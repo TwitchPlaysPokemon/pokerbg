@@ -124,6 +124,33 @@ PalletTownScript4:
 	and a ; is the movement script over?
 	ret nz
 
+	; Check and see if we didn't make it to Oak's Lab
+	ld a, [wCurMap]
+	cp OAKS_LAB
+	jr z, .in_oaks_lab
+	; move player one tile left
+	ld hl, wd736
+	set 1, [hl]
+	ld a, $1
+	ld [wSimulatedJoypadStatesIndex], a
+	ld a, D_LEFT
+	ld [wSimulatedJoypadStatesEnd], a
+	xor a
+	ld [wSpritePlayerStateData1ImageIndex], a
+	call StartSimulatingJoypadStates
+	ret
+
+.in_oaks_lab
+	; clean up simulated joypad
+	xor a
+	ld [wSimulatedJoypadStatesIndex], a
+	ld [wSimulatedJoypadStatesEnd], a
+	ld hl, wd736
+	res 0, [hl]
+	res 1, [hl]
+	ld hl, wd730
+	res 7, [hl]
+
 	; trigger the next script
 	ld a, 5
 	ld [wPalletTownCurScript], a
