@@ -16,7 +16,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - Forest tall-grass-with-flowers tiles will now correctly generate encounters. (Side-effect of the above change.)
 - Soft Reset button combination is removed.
 - The Safari Zone will now let you in if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
-- The Safari Zone will no longer let you leave [without quitting](https://glitchcity.wiki/Safari_Zone_exit_glitch) the Safari Game.
+- The Safari Zone will no longer let you leave [without quitting](https://glitchcity.wiki/Safari_Zone_exit_glitch) the Safari Game. Fainting will also end the Safari Game.
 - The Safari Zone's initial step count is boosted from 500 to 750, allowing for more missteps while trying to find HM03 and the GOLD TEETH.
 - Cycling Road's gate guards will no longer let you sneak by [without a BICYCLE](https://glitchcity.wiki/Go_on_Cycling_Road_without_a_Bicycle).
 - [Escaping a trainer encounter](https://glitchcity.wiki/Trainer_escape_glitch) no longer leaves the game in a broken state, whether through use of moves/items or by losing a wild encounter in sight of a trainer.
