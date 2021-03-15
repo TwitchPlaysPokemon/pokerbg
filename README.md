@@ -22,6 +22,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - [Escaping a trainer encounter](https://glitchcity.wiki/Trainer_escape_glitch) no longer leaves the game in a broken state, whether through use of moves/items or by blacking out to a wild encounter in sight of a trainer.
 - Move swapping is no longer possible whle [transformed](https://glitchcity.wiki/Swapping_Transform_moves_glitch). (Same behavior as Pokémon Yellow)
 - The Bike Shop salesman no longer leaves [Instant Text Speed](https://glitchcity.wiki/Bike_Shop_instant_text_glitch) turned on. (Same behavior as Pokémon Yellow)
+- The NPC that takes you to Pewter Gym can no longer be bypassed. (Same behavior as Pokémon Yellow)
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 

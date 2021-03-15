@@ -30,7 +30,8 @@ ENDC
 	ld hl, CoordsData_19277
 	call ArePlayerCoordsInArray
 	ret nc
-	ld a, $f0
+	; Yellow added Start and Select to the JoyIgnore here to prevent skipping Gym Guy
+	ld a, $fc ; D_UP | D_DOWN | D_LEFT| D_RIGHT | START | SELECT
 	ld [wJoyIgnore], a
 	ld a, $5
 	ldh [hSpriteIndexOrTextID], a
