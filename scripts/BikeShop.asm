@@ -60,13 +60,13 @@ BikeShopText1:
 	hlcoord 8, 3
 	ld de, BikeShopMenuPrice
 	call PlaceString
+	ld hl, wd730
+	res 6, [hl]
 	ld hl, BikeShopText_1d815
 	call PrintText
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	jr nz, .cancel
-	ld hl, wd730
-	res 6, [hl]
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .cancel

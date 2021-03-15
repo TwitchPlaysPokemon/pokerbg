@@ -21,6 +21,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - Cycling Road's gate guards will no longer let you sneak by [without a BICYCLE](https://glitchcity.wiki/Go_on_Cycling_Road_without_a_Bicycle).
 - [Escaping a trainer encounter](https://glitchcity.wiki/Trainer_escape_glitch) no longer leaves the game in a broken state, whether through use of moves/items or by losing a wild encounter in sight of a trainer.
 - Move swapping is no longer possible whle [transformed](https://glitchcity.wiki/Swapping_Transform_moves_glitch).
+- The Bike Shop salesman no longer leaves [Instant Text Speed](https://glitchcity.wiki/Bike_Shop_instant_text_glitch) turned on.
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
