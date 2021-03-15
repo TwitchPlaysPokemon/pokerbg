@@ -28,3 +28,10 @@
 *.sn*
 *.sa*
 *.sg1
+
+# patches
+*.ips
+*.bps
+
+#patch creation folder
+patch

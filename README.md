@@ -2,12 +2,12 @@
 
 This is based on Pret's [disassembly][pokered] of the US releases of Pokémon Red and Blue, with an added Green to stand in for JP Blue
 
-It builds the following ROMs:
+It builds the following games:
 
-- Pokemon Red (TPP).gb `sha1: TBD`
-- Pokemon Blue (TPP).gb `sha1: TBD`
-- Pokemon Green (TPP).gb `sha1: TBD`
-- Pokemon Blue Debug (TPP).gb `sha1: TBD`
+- Pokémon Red (English), based on the offical US Pokémon Red that's derived from Japanese Pokémon Red
+- Pokémon Blue (English), based on the official US Pokémon Blue that's derived from Japanese Pokémon Green
+- Pokémon Green (English), derived from Japanese Pokémon Blue
+- Pokémon Blue (Debug version)
 
 In addition to adding Pokémon Green, this build also makes the following changes:
 

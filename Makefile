@@ -42,23 +42,24 @@ RGBLINK ?= $(RGBDS)rgblink
 
 all: $(roms)
 red:        pokered.gbc
-blue:       pokeblue.gbc
 green:      pokegreen.gbc
+blue:       pokeblue.gbc
 blue_debug: pokeblue_debug.gbc
 
 clean: tidy
 	find gfx \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' \) -delete
+	rm -rf patch
 
 tidy:
-	rm -f $(roms) $(pokered_obj) $(pokeblue_obj) $(pokegreen_obj) $(pokeblue_debug_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) rgbdscheck.o
+	rm -f $(roms) $(pokered_obj) $(pokeblue_obj) $(pokegreen_obj) $(pokeblue_debug_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) $(roms:.gbc=.ips) $(roms:.gbc=.bps) pokegreen.red.ips pokegreen.blue.ips pokegreen.red.bps pokegreen.blue.bps rgbdscheck.o
 	$(MAKE) clean -C tools/
 
-compare: $(roms)
-	@$(SHA1) -c roms.sha1
-
-tools:
+tools: $(roms)
 	$(MAKE) -C tools/
 
+patch: all
+	chmod +x ./build-patches.sh
+	./build-patches.sh
 
 RGBASMFLAGS = -h -L -Weverything
 # Create a sym/map for debug purposes if `make` run with `DEBUG=1`

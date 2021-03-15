@@ -4,13 +4,20 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "Build ROMs",
             "type": "shell",
             "command": "make clean; make -j",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "problemMatcher": "$rgbdserror"
+        },
+        {
+            "label": "Build ROMs + Patches",
+            "type": "shell",
+            "command": "make clean; make -j patch",
+            "group": "build",
             "problemMatcher": "$rgbdserror"
         }
     ]
