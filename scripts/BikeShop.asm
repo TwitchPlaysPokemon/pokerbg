@@ -60,16 +60,19 @@ BikeShopText1:
 	hlcoord 8, 3
 	ld de, BikeShopMenuPrice
 	call PlaceString
-	ld hl, wd730
-	res 6, [hl]
+	; This text is printed instantly even in Yellow
 	ld hl, BikeShopText_1d815
 	call PrintText
+	; This is where Yellow fixes the bike shop instatext glitch
+	ld hl, wd730
+	res 6, [hl]
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	jr nz, .cancel
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .cancel
+	; This is where Red and Blue disable instatext
 	ld hl, BikeShopCantAffordText
 	call PrintText
 .cancel
