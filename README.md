@@ -7,18 +7,20 @@ It builds the following ROMs:
 - Pokemon Red (TPP).gb `sha1: TBD`
 - Pokemon Blue (TPP).gb `sha1: TBD`
 - Pokemon Green (TPP).gb `sha1: TBD`
-- BLUEMONS.GB (debug build) `sha1: TBD`
+- Pokemon Blue Debug (TPP).gb `sha1: TBD`
 
 In addition to adding Pokémon Green, this build also makes the following changes:
 
-- Poké DOLLS can no longer be used to defeat Ghost Marowak.
-- East shore tiles will no longer generate encounters. (No [Old Man Glitch](https://bulbapedia.bulbagarden.net/wiki/Old_man_glitch))
-- Forest tall-grass-with-flowers tiles will now correctly generate encounters.
+- POKé DOLLS can no longer be used to defeat [Ghost Marowak](https://glitchcity.wiki/Go_past_the_Marowak_ghost_without_a_Silph_Scope).
+- East shore tiles will no longer [generate encounters](https://glitchcity.wiki/Old_man_glitch).
+- Forest tall-grass-with-flowers tiles will now correctly generate encounters. (Side-effect of the above change.)
 - Soft Reset button combination is removed.
 - The Safari Zone will now let you in if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
-- The Safari Zone will no longer let you leave without quitting the Safari Game. This prevents several glitches, the most major being [Glitch City](https://bulbapedia.bulbagarden.net/wiki/Glitch_City)
+- The Safari Zone will no longer let you leave [without quitting](https://glitchcity.wiki/Safari_Zone_exit_glitch) the Safari Game.
 - The Safari Zone's initial step count is boosted from 500 to 750, allowing for more missteps while trying to find HM03 and the GOLD TEETH.
-- Cycling Road's gate guards will no longer let you sneak by without a BICYCLE.
+- Cycling Road's gate guards will no longer let you sneak by [without a BICYCLE](https://glitchcity.wiki/Go_on_Cycling_Road_without_a_Bicycle).
+- [Escaping a trainer encounter](https://glitchcity.wiki/Trainer_escape_glitch) no longer leaves the game in a broken state, whether through use of moves/items or by losing a wild encounter in sight of a trainer.
+- Move swapping is no longer possible whle [transformed](https://glitchcity.wiki/Swapping_Transform_moves_glitch).
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
