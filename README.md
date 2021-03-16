@@ -26,6 +26,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - The player can no longer [get stuck in the wall of Oak's Lab](https://glitchcity.wiki/Get_stuck_in_a_wall) if a Pallet Town NPC gets in their way.
 - Item evolutions can no longer erroneously happen [during battles](https://glitchcity.wiki/Evolve_without_an_evolutionary_stone). (Same behavior as Pokémon Yellow)
 - [Escaping](https://glitchcity.wiki/Cable_Club_escape_glitch) from the Cable Club is no longer possible. (Same behavior as Pokémon Yellow)
+- Buying an item that already has a full stack at the end of the Bag or PC will no longer [overflow and write to arbitrary memory addresses](https://glitchcity.wiki/99_item_stack_glitch). (Same behavior as Pokémon Yellow)
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
