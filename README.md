@@ -14,8 +14,8 @@ In addition to adding Pokémon Green, this build also makes the following change
 - POKé DOLLS can no longer be used to defeat [Ghost Marowak](https://glitchcity.wiki/Go_past_the_Marowak_ghost_without_a_Silph_Scope).
 - East shore tiles will no longer [generate encounters](https://glitchcity.wiki/Old_man_glitch). (Same behavior as Pokémon Yellow)
 - Forest tall-grass-with-flowers tiles will now correctly generate encounters. (Side-effect of the above change.)
-- Soft Reset button combination is removed.
-- The Safari Zone will now let you in if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
+- The [Soft Reset](https://bulbapedia.bulbagarden.net/wiki/Soft_resetting) button combination is removed.
+- The Safari Zone will now [let you in](https://bulbapedia.bulbagarden.net/wiki/Kanto_Safari_Zone#Trivia) if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
 - The Safari Zone's initial step count is boosted from 500 to 750, allowing for more missteps while trying to find HM03 and the GOLD TEETH.
 - The Safari Zone will no longer let you leave [without quitting](https://glitchcity.wiki/Safari_Zone_exit_glitch) the Safari Game. Fainting will also end the Safari Game. (Same fainting behavior as Pokémon Yellow)
 - Cycling Road's gate guards will no longer let you sneak by [without a BICYCLE](https://glitchcity.wiki/Go_on_Cycling_Road_without_a_Bicycle).
@@ -25,6 +25,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - The NPC that takes you to Pewter Gym can no longer be bypassed. (Same behavior as Pokémon Yellow)
 - The player can no longer [get stuck in the wall of Oak's Lab](https://glitchcity.wiki/Get_stuck_in_a_wall) if a Pallet Town NPC gets in their way.
 - Item evolutions can no longer erroneously happen [during battles](https://glitchcity.wiki/Evolve_without_an_evolutionary_stone). (Same behavior as Pokémon Yellow)
+- [Escaping](https://glitchcity.wiki/Cable_Club_escape_glitch) from the Cable Club is no longer possible. (Same behavior as Pokémon Yellow)
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 

@@ -2,6 +2,9 @@ ApplyOutOfBattlePoisonDamage:
 	ld a, [wd730]
 	add a
 	jp c, .noBlackOut ; no black out if joypad states are being simulated
+	ld a, [wd72e] ; additional check from Yellow
+	bit 6, a
+	jp nz, .noBlackOut ; no black out if using the link cable
 	ld a, [wPartyCount]
 	and a
 	jp z, .noBlackOut
