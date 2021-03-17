@@ -37,6 +37,8 @@ SLP EQU %111 ; sleep counter
 	const FRZ ; 5
 	const PAR ; 6
 
+MAX_FREEZE_TURNS EQU 25
+
 MAX_STAT_VALUE EQU 999
 
 ; trainer dvs

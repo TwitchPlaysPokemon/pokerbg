@@ -1721,6 +1721,9 @@ LoadEnemyMonFromParty:
 
 SendOutMon:
 	callfar PrintSendOutMonMessage
+	ld hl, wBattleMonStatus
+	ld a, MAX_FREEZE_TURNS
+	ld [wFreezeTurnsRemaining], a ; Reinit freeze turns
 	ld hl, wEnemyMonHP
 	ld a, [hli]
 	or [hl] ; is enemy mon HP zero?
@@ -3332,7 +3335,21 @@ CheckPlayerStatusConditions:
 .FrozenCheck
 	bit FRZ, [hl] ; frozen?
 	jr z, .HeldInPlaceCheck
+	push hl
+	ld hl, wd72e
+	bit 6, [hl]
+	jp nz, .isFrozen ; do not try to thaw while in a link battle
+	ld hl, wFreezeTurnsRemaining
+	dec [hl]
+	jr nz, .isFrozen
+	pop hl
+	res FRZ, [hl] ; remove FRZ
+	ld hl, ThawedOutText
+	jr .printMessage
+.isFrozen
+	pop hl
 	ld hl, IsFrozenText
+.printMessage
 	call PrintText
 	xor a
 	ld [wPlayerUsedMove], a
@@ -3573,6 +3590,10 @@ WokeUpText:
 
 IsFrozenText:
 	text_far _IsFrozenText
+	text_end
+
+ThawedOutText:
+	text_far _ThawedOutText
 	text_end
 
 FullyParalyzedText:

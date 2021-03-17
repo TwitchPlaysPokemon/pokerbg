@@ -296,6 +296,8 @@ FreezeBurnParalyzeEffect:
 ; hyper beam bits aren't reseted for opponent's side
 	ld a, 1 << FRZ
 	ld [wBattleMonStatus], a
+	ld a, MAX_FREEZE_TURNS
+	ld [wFreezeTurnsRemaining], a
 	ld hl, FrozenText
 	jp PrintText
 
