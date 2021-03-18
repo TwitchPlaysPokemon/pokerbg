@@ -2282,6 +2282,9 @@ wOptions::
 ; bit 6 = battle style
 ; 0: Shift
 ; 1: Set
+; bit 5 = options menu lockout
+; 0: Unlocked
+; 1: Locked
 ; bits 0-3 = text speed (number of frames to delay after printing a letter)
 ; 1: Fast
 ; 3: Medium

@@ -507,6 +507,9 @@ DisplayOptionMenu:
 	cp 16 ; cursor on Cancel?
 	jr z, .loop
 .cursorInTextSpeed
+	ld a, [wOptions]
+	bit 5, a ; Options Locked
+	jp nz, .loop
 	bit 5, b ; Left pressed?
 	jp nz, .pressedLeftInTextSpeed
 	jp .pressedRightInTextSpeed
@@ -547,11 +550,17 @@ DisplayOptionMenu:
 	call PlaceUnfilledArrowMenuCursor
 	jp .loop
 .cursorInBattleAnimation
+	ld a, [wOptions]
+	bit 5, a ; Options Locked
+	jp nz, .loop
 	ld a, [wOptionsBattleAnimCursorX] ; battle animation cursor X coordinate
 	xor $0b ; toggle between 1 and 10
 	ld [wOptionsBattleAnimCursorX], a
 	jp .eraseOldMenuCursor
 .cursorInBattleStyle
+	ld a, [wOptions]
+	bit 5, a ; Options Locked
+	jp nz, .loop
 	ld a, [wOptionsBattleStyleCursorX] ; battle style cursor X coordinate
 	xor $0b ; toggle between 1 and 10
 	ld [wOptionsBattleStyleCursorX], a
@@ -598,6 +607,9 @@ OptionMenuCancelText:
 
 ; sets the options variable according to the current placement of the menu cursors in the options menu
 SetOptionsFromCursorPositions:
+	ld a, [wOptions]
+	bit 5, a ; Options Locked
+	ret nz ; Don't change anything if Options are locked out
 	ld hl, TextSpeedOptionData
 	ld a, [wOptionsTextSpeedCursorX] ; text speed cursor X coordinate
 	ld c, a
@@ -637,7 +649,7 @@ SetCursorPositionsFromOptions:
 	ld hl, TextSpeedOptionData + 1
 	ld a, [wOptions]
 	ld c, a
-	and $3f
+	and $f
 	push bc
 	ld de, 2
 	call IsInArray

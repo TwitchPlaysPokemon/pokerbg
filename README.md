@@ -29,6 +29,7 @@ In addition to adding Pokémon Green, this build also makes the following change
 - Buying an item that already has a full stack at the end of the Bag or PC will no longer [overflow and write to arbitrary memory addresses](https://glitchcity.wiki/99_item_stack_glitch). (Same behavior as Pokémon Yellow)
 - If a player's frozen Pokémon stays in battle for 25 consecutive turns, it will thaw. (Freeze normally never thaws out in Red, Green, Blue, or Yellow) This prevents a potential softlock in which the AI can end up indefinitely refusing to damage or defrost the player's Pokémon. Enemy Pokémon are not limited by PP in Red, Green, Blue, or Yellow, so such a situation would never resolve.
 - STRUGGLE is now typeless. No type resists or is immune to STRUGGLE, so the softlock where a player runs out of moves against a never-attacking GHOST-type Pokémon is now impossible.
+- Options can now be locked by externally setting Options bit 5. If bit 5 is set, the menu can still be opened, but the options cannot be changed. This can be useful for making sure pre-set rules are not broken.
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
