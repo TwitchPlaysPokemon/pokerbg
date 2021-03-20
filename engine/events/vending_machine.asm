@@ -1,4 +1,6 @@
 VendingMachineMenu::
+	call VendingMachine_CheckForSoftlock
+	jp nz, .freebie
 	ld hl, VendingMachineText1
 	call PrintText
 	ld a, MONEY_BOX
@@ -79,6 +81,13 @@ VendingMachineMenu::
 .notThirsty
 	ld hl, VendingMachineText7
 	jp PrintText
+.freebie
+	ld hl, VendingMachineText8
+	call PrintText
+	ld c, -1
+	xor a
+	ld [wCurrentMenuItem], a
+	jp .enoughMoney
 
 VendingMachineText1:
 	text_far _VendingMachineText1
@@ -112,6 +121,10 @@ VendingMachineText7:
 	text_far _VendingMachineText7
 	text_end
 
+VendingMachineText8:
+	text_far _VendingMachineText8
+	text_end
+
 LoadVendingMachineItem:
 	ld hl, VendingPrices
 	ld a, [wCurrentMenuItem]
@@ -122,6 +135,8 @@ LoadVendingMachineItem:
 	add hl, de
 	ld a, [hli]
 	ldh [hVendingMachineItem], a
+	inc c ; if c was -1, it's free
+	jr z, .free
 	ld a, [hli]
 	ldh [hVendingMachinePrice], a
 	ld a, [hli]
@@ -129,5 +144,87 @@ LoadVendingMachineItem:
 	ld a, [hl]
 	ldh [hVendingMachinePrice + 2], a
 	ret
+.free
+	xor a
+	ldh [hVendingMachinePrice], a
+	ldh [hVendingMachinePrice + 1], a
+	ldh [hVendingMachinePrice + 2], a
+	ret
 
 INCLUDE "data/items/vending_prices.asm"
+	db 0
+
+VendingMachine_CheckForSoftlock:
+	; z: no softlock
+	; nz: probable softlock
+
+	ld hl, wd728
+	bit 6, [hl] ; gave guards a drink already
+	jr nz, .noSoftlock
+	ld hl, wObtainedBadges
+	bit BIT_CASCADEBADGE, [hl]
+	ret z  ; no softlock
+	bit BIT_THUNDERBADGE, [hl]
+	ret z  ; no softlock
+	bit BIT_RAINBOWBADGE, [hl]
+	ret z  ; no softlock
+	bit BIT_SOULBADGE, [hl]
+	ret z  ; no softlock
+	bit BIT_VOLCANOBADGE, [hl]
+	ret z  ; no softlock
+	call VendingMachines_HasDrinkInBag
+	jr nz, .noSoftlock ; has a drink in the bag
+	call VendingMachines_HasDrinkInBox
+	jr nz, .noSoftlock ; has a drink in the PC
+	xor a
+	ldh [hMoney], a
+	ld a, $02
+	ldh [hMoney + 1], a
+	ld a, $00
+	ldh [hMoney + 2], a
+	call HasEnoughMoney
+	jr nc, .noSoftlock
+	ld a, 1
+	and a
+	ret
+.noSoftlock
+	xor a
+	ret
+
+VendingMachines_HasDrinkInBag:
+	ld hl, VendingPrices
+.loop
+	ld a, [hli]
+	and a
+	ret z ; out of drinks to look for
+	inc hl ; skip price
+	inc hl ; skip price
+	inc hl ; skip price
+	push hl
+	ld [wd11e], a
+	ld b, a
+	predef GetQuantityOfItemInBag
+	pop hl
+	ld a, b
+	and a
+	jr z, .loop ; if the item isn't in the bag
+	ret
+
+VendingMachines_HasDrinkInBox:
+	ld hl, VendingPrices
+.loop
+	ld a, [hli]
+	and a
+	ret z ; out of drinks to look for
+	inc hl ; skip price
+	inc hl ; skip price
+	inc hl ; skip price
+	push hl
+	ld [wd11e], a
+	ld b, a
+	predef GetQuantityOfItemInBox
+	pop hl
+	ld a, b
+	and a
+	jr z, .loop ; if the item isn't in the box
+	ret

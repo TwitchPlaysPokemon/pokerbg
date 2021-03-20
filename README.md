@@ -11,12 +11,10 @@ It builds the following games:
 
 In addition to adding Pokémon Green, this build also makes the following changes:
 
+- The [Soft Reset](https://bulbapedia.bulbagarden.net/wiki/Soft_resetting) button combination is removed.
 - POKé DOLLS can no longer be used to defeat [Ghost Marowak](https://glitchcity.wiki/Go_past_the_Marowak_ghost_without_a_Silph_Scope).
 - East shore tiles will no longer [generate encounters](https://glitchcity.wiki/Old_man_glitch). (Same behavior as Pokémon Yellow)
 - Forest tall-grass-with-flowers tiles will now correctly generate encounters. (Side-effect of the above change.)
-- The [Soft Reset](https://bulbapedia.bulbagarden.net/wiki/Soft_resetting) button combination is removed.
-- The Safari Zone will now [let you in](https://bulbapedia.bulbagarden.net/wiki/Kanto_Safari_Zone#Trivia) if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
-- The Safari Zone's initial step count is boosted from 500 to 750, allowing for more missteps while trying to find HM03 and the GOLD TEETH.
 - The Safari Zone will no longer let you leave [without quitting](https://glitchcity.wiki/Safari_Zone_exit_glitch) the Safari Game. Fainting will also end the Safari Game. (Same fainting behavior as Pokémon Yellow)
 - Cycling Road's gate guards will no longer let you sneak by [without a BICYCLE](https://glitchcity.wiki/Go_on_Cycling_Road_without_a_Bicycle).
 - [Escaping a trainer encounter](https://glitchcity.wiki/Trainer_escape_glitch) no longer leaves the game in a broken state, whether through use of moves/items or by blacking out to a wild encounter in sight of a trainer.
@@ -30,6 +28,9 @@ In addition to adding Pokémon Green, this build also makes the following change
 - If a player's frozen Pokémon stays in battle for 25 consecutive turns, it will thaw. (Freeze normally never thaws out in Red, Green, Blue, or Yellow) This prevents a potential softlock in which the AI can end up indefinitely refusing to damage or defrost the player's Pokémon. Enemy Pokémon are not limited by PP in Red, Green, Blue, or Yellow, so such a situation would never resolve.
 - If a player's Pokémon uses RAGE in battle for 25 consecutive turns, RAGE will subside. This prevents any softlocks related to the player getting stuck using RAGE while the enemy Pokémon is either unable to take damage from it, or able to outheal any damage RAGE can do to it.
 - STRUGGLE is now typeless. No type resists or is immune to STRUGGLE, so the softlock where a player runs out of moves against a never-attacking GHOST-type Pokémon is now impossible.
+- The Safari Zone will now [let you in](https://bulbapedia.bulbagarden.net/wiki/Kanto_Safari_Zone#Trivia) if you don't have enough money, but with less than 30 SAFARI BALLs. (Same behavior as Pokémon Yellow)
+- The Safari Zone's initial step count is boosted from 500 to 750, allowing for more missteps while trying to find HM03 and the GOLD TEETH.
+- Vending Machines will dispense a drink for free if you don't have and can't afford any and have yet to unlock Saffron City after getting the VOLCANO BADGE (and every other BADGE besides MARSH and EARTH). This prevents players from locking themselves out of Saffron City permanently.
 - Options can now be locked by externally setting Options bit 5. If bit 5 is set, the menu can still be opened, but the options cannot be changed. This can be useful for making sure pre-set rules are not broken.
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
