@@ -1191,12 +1191,15 @@ ClearHyperBeam:
 	ret
 
 RageEffect:
-	ld hl, wPlayerBattleStatus2
+	ld hl, wEnemyBattleStatus2
 	ldh a, [hWhoseTurn]
 	and a
-	jr z, .player
-	ld hl, wEnemyBattleStatus2
-.player
+	jr nz, .enemy
+	ld hl, wPlayerBattleStatus2
+	ld a, [wRageTurnsRemaining]
+	and a
+	ret z ; Don't reset USING_RAGE if out of Rage turns
+.enemy
 	set USING_RAGE, [hl] ; mon is now in "rage" mode
 	ret
 

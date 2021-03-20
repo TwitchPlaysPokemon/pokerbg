@@ -1145,7 +1145,14 @@ wFreezeTurnsRemaining::
 	; Avoids a scenario where a battle will never end because player's mon is frozen and enemy infinitely uses non-damaging moves
 	ds 1
 
-	ds 8
+wRageTurnsRemaining::
+	; during battle, this address is initialized when a player's mon uses Rage
+	; each time Rage continues, this is decremented
+	; when this hits zero, that is the player's last Rage turn.
+	; Avoids a scenario where a battle will never end because player's mon is stuck using Rage endlessly against a Pokemon immune to it
+	ds 1
+
+	ds 7
 
 wActionResultOrTookBattleTurn::
 ; This has overlapping related uses.
