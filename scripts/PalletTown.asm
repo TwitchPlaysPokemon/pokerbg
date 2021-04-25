@@ -125,9 +125,6 @@ PalletTownScript4:
 	ret nz
 
 	; Check and see if we didn't make it to Oak's Lab
-	ld a, [wCurMap]
-	cp OAKS_LAB
-	jr z, .followed_oak
 	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB
 	jr nz, .followed_oak
 	; move player one tile left
@@ -142,16 +139,6 @@ PalletTownScript4:
 	jp StartSimulatingJoypadStates
 
 .followed_oak
-	; clean up simulated joypad
-	xor a
-	ld [wSimulatedJoypadStatesIndex], a
-	ld [wSimulatedJoypadStatesEnd], a
-	ld [wJoyIgnore], a
-	ld hl, wd736
-	res 0, [hl]
-	ld hl, wd730
-	res 7, [hl]
-
 	; trigger the next script
 	ld a, 5
 	ld [wPalletTownCurScript], a
