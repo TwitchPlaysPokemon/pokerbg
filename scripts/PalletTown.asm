@@ -127,7 +127,9 @@ PalletTownScript4:
 	; Check and see if we didn't make it to Oak's Lab
 	ld a, [wCurMap]
 	cp OAKS_LAB
-	jr z, .in_oaks_lab
+	jr z, .followed_oak
+	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB
+	jr nz, .followed_oak
 	; move player one tile left
 	ld hl, wd736
 	set 1, [hl]
@@ -137,17 +139,16 @@ PalletTownScript4:
 	ld [wSimulatedJoypadStatesEnd], a
 	xor a
 	ld [wSpritePlayerStateData1ImageIndex], a
-	call StartSimulatingJoypadStates
-	ret
+	jp StartSimulatingJoypadStates
 
-.in_oaks_lab
+.followed_oak
 	; clean up simulated joypad
 	xor a
 	ld [wSimulatedJoypadStatesIndex], a
 	ld [wSimulatedJoypadStatesEnd], a
+	ld [wJoyIgnore], a
 	ld hl, wd736
 	res 0, [hl]
-	res 1, [hl]
 	ld hl, wd730
 	res 7, [hl]
 
