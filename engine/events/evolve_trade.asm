@@ -6,16 +6,12 @@ EvolveTradeMon:
 ; are checked. In that version, TradeMons that
 ; can evolve are Graveler and Haunter.
 
-; In localization, this check was translated
-; before monster names were finalized.
-; Then, Haunter's name was "Spectre".
-; Since its name no longer starts with
-; "SP", it is prevented from evolving.
+; This is a puzzling way of doing it, especially
+; since wInGameTradeReceiveMonSpecies exists.
 
-; This may have been why Red/Green's trades
-; were used instead, where none can evolve.
-
-; This was fixed in Yellow.
+; Yellow checks wInGameTradeReceiveMonSpecies against
+; the species ids for Graveler, Haunter, Kadabra, and Machoke,
+; a far better solution.
 
 	ld a, [wInGameTradeReceiveMonName]
 
@@ -23,12 +19,12 @@ EvolveTradeMon:
 	cp "G"
 	jr z, .ok
 
-	; "SPECTRE" (HAUNTER)
-	cp "S"
+	; HAUNTER
+	cp "H"
 	ret nz
 	ld a, [wInGameTradeReceiveMonName + 1]
-	cp "P"
-	ret nz
+	cp "A" ; This is unnecessary, as HAUNTER is the only H trade mon
+	ret nz ; but the original check was for SP to exclude SEEL and SLOWPOKE
 
 .ok
 	ld a, [wPartyCount]
