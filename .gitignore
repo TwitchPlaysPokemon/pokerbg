@@ -35,3 +35,6 @@
 
 #patch creation folder
 patch
+
+#OS files
+.DS_Store
